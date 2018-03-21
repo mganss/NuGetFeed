@@ -36,7 +36,9 @@ namespace NuGetFeed.Controllers
         [HttpGet("{packageId}")]
         public async Task<ActionResult> Get(string packageId, bool prerelease = false, bool unlisted = false)
         {
-            if (!Cache.TryGetValue(packageId, out string content))
+            var cacheKey = $"{packageId}:{prerelease}:{unlisted}";
+
+            if (!Cache.TryGetValue(cacheKey, out string content))
             {
                 var repo = Repository.Factory.GetCoreV3(NuGetConstants.V3FeedUrl);
                 var resource = await repo.GetResourceAsync<MetadataResource>();
@@ -69,7 +71,7 @@ namespace NuGetFeed.Controllers
                 }
 
                 content = rss.ToString();
-                Cache.Set(packageId, content, TimeSpan.FromMinutes(CacheMinutes));
+                Cache.Set(cacheKey, content, TimeSpan.FromMinutes(CacheMinutes));
             }
 
             return Content(content, "application/rss+xml");
