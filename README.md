@@ -4,9 +4,9 @@ A tiny ASP.NET Core Web API site that provides an RSS feed for NuGet package ver
 
 ## Use
 
-http://nugetfeed.ganss.org/versions/Newtonsoft.Json or
+http://nugetfeed.ganss.org/versions/NUnit or
 
-http://nugetfeed.ganss.org/versions/Newtonsoft.Json?prerelease=true
+http://nugetfeed.ganss.org/versions/NUnit?prerelease=true
 
 ## Deploy
 
