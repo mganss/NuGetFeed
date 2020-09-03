@@ -1,12 +1,6 @@
 # NuGetFeed
 
-A tiny ASP.NET Core Web API site that provides an RSS feed for NuGet package versions.
-
-## Use
-
-http://nugetfeed.ganss.org/versions/NUnit or
-
-http://nugetfeed.ganss.org/versions/NUnit?prerelease=true
+A tiny ASP.NET Core Web API site that provides an RSS feed for NuGet package versions. No longer needed since nuget.org has added RSS feeds.
 
 ## Deploy
 
